@@ -1,0 +1,74 @@
+{
+	"Batilla": {
+		"nome": "Batilla",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" },
+			{ "data": "2020-12-11", "prezzo": "103.5" }
+		]
+	},
+	"Telebom": {
+		"nome": "Telebom",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" }
+		]
+	},
+	"Multicredit": {
+		"nome": "Multicredit",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" }
+		]
+	},
+	"Emel": {
+		"nome": "Emel",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" }
+		]
+	},
+	"Biscali": {
+		"nome": "Biscali",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" }
+		]
+	},
+	"Meletton": {
+		"nome": "Meletton",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" }
+		]
+	},
+	"Sansung": {
+		"nome": "Sansung",
+		"cronologia": [
+			{ "data": "2020-12-01", "prezzo": "102.48" },
+			{ "data": "2020-12-02", "prezzo": "105" },
+			{ "data": "2020-12-03", "prezzo": "97" },
+			{ "data": "2020-12-04", "prezzo": "100.5" },
+			{ "data": "2020-12-05", "prezzo": "100" },
+			{ "data": "2020-12-11", "prezzo": "105" }
+		]
+	}
+}

@@ -1,8 +1,16 @@
-function openForm() {
-    document.getElementById("login").style.display = "block";
+function openElement(id) {
+	document.getElementById(id).style.display = "block";
 }
 
-function closeForm() {
-    document.getElementById("login").style.display = "none";
-    console.log();
+function closeElement(id) {
+	document.getElementById(id).style.display = "none";
+}
+
+function changePage(url) {
+	document.location.href = url;
+}
+
+function login() {
+	closeElement("login-form");
+	changePage("azioni.html");
 }

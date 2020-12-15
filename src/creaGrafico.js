@@ -1,44 +1,70 @@
-function createLineChart() {
-    /* const login = document.getElementById('login');
-    login.style.visibility = 'hidden';
-    login.disabled = true;
-    login.classList.toggle("hide"); */
+let grafico;
+let azioni = JSON.parse(sessionStorage.getItem("azioni"));
+let giornate = azioni[0].cronologia.map((g) => g.data);
 
-    var ctx = document.getElementById('grafico');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: date,
-            datasets: [{
-                label: '# of Votes',
-                data: valori,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            }
-        }
-    });
+createLineChart({ labels: giornate, datasets: [] });
+
+function getLineDataset(azione) {
+	/*let prezzi = azione.cronologia.map((giornata) => ({
+		x: giornata.data,
+		y: giornata.prezzo,
+	}));*/
+	let prezzi = azione.cronologia.map((giornata) => giornata.prezzo);
+
+	let colore =
+		"#" + Math.floor(Math.random() * parseInt("ffffff", 16)).toString(16);
+	const dataset = {
+		data: prezzi,
+		label: azione.nome,
+		fill: false,
+		borderColor: colore,
+	};
+	return dataset;
+}
+
+function getLineDatasetByName(nome) {
+	const azione = azioni.filter((azione) => azione.nome == nome)[0];
+	return getLineDataset(azione);
+}
+
+function addLineByName(nome) {
+	const dataset = this.getLineDatasetByName(nome);
+	grafico.data.datasets.push(dataset);
+	grafico.update();
+}
+
+function createLineChart(data) {
+	var ctx = document.getElementById("grafico");
+	grafico = new Chart(ctx, {
+		type: "line",
+		data: data,
+		options: {
+			title: {
+				display: true,
+				text: "Andamento delle azioni nel tempo (€)",
+			},
+			responsive: true,
+			scales: {
+				yAxes: [
+					{
+						ticks: {
+							beginAtZero: false,
+						},
+						scaleLabel: {
+							display: true,
+							labelString: "prezzo (euro)",
+						},
+					},
+				],
+				xAxes: [
+					{
+						scaleLabel: {
+							display: true,
+							labelString: "data",
+						},
+					},
+				],
+			},
+		},
+	});
 }
