@@ -29,10 +29,10 @@
                     class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a href="esercizi.html" class="nav-link">Esercizi <i class="fas fa-pencil-ruler"></i></a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a href="azioni.html" class="nav-link">Azioni <i class="fas fa-chart-line"></i></a>
                         </li>
                         <li class="nav-item">
@@ -45,57 +45,86 @@
     </header>
 
     <div class="content">
-        <div class="row">
-            <div class="col-xl-9">
-                <div class="card">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <div class="d-flex">
-                                <h4>Grafico</h4>
-                                <div class="ml-auto">
-                                    <div class="dropdown">
-                                        <a class="btn btn-outline-dark dropdown-toggle" role="button"
-                                            id="dropdownMenuButton" onclick="riempiMenu()" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            Aggiungi un'azione
-                                        </a>
-                                        <div class="dropdown-menu" id="menu" aria-labelledby="dropdownMenuButton"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <canvas id="grafico" width="1250"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="card" id="card-tabella" style="display: none;">
-                    <div class="card-body">
-                        <h4 class="card-title" id="titolo"></h4>
+                        <h4 class="card-title">elenco username e password di tutti i clienti</h4>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">data</th>
-                                    <th scope="col">valore (€)</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Password</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabella"></tbody>
+                            <tbody id="tabella-1"></tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
-            <div class="col-12">
-                <div class="card" style="margin-top: 50px;">
+            <div class="col">
+                <div class="card h-100">
                     <div class="card-body">
-                        <h4 class="card-title">Fondi d'investimento</h4>
+                        <h4 class="card-title row" style="margin-left: 0px;">
+                            Azioni acquistate da
+                            <div class="dropdown" style="margin-left: 10px;">
+                                <a class="btn btn-outline-dark dropdown-toggle" role="button" id="dropdownMenuButton"
+                                    onclick="riempiMenu()" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    cliente
+                                </a>
+                                <div class="dropdown-menu" id="menu" aria-labelledby="dropdownMenuButton"></div>
+                            </div>
+                        </h4>
+                        <ul class="list-group" id="es2"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">clienti che possiedono azioni Multicredit</h4>
+                        <ul class="list-group" id="es3"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Azione con il valore più alto oggi</h5>
+                        <p class="card-text" id="es4"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Numero di fondi nei quali sono incluse le azioni</h5>
                         <table class="table">
                             <thead>
-                                <tr id="tabella-fondi-titoli">
-                                    <th scope="col"> Azioni </th>
+                                <tr>
+                                    <th scope="col">Azione</th>
+                                    <th scope="col">numero</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabella-fondi"></tbody>
+                            <tbody id="tabella-5"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Valore dei portafogli dei clienti</h5>
+                        <p class="card-text" id="es6"></p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">valore (€)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabella-6"></tbody>
                         </table>
                     </div>
                 </div>
@@ -140,14 +169,15 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script><!-- Icone di Fontawesome -->
+        crossorigin="anonymous"></script>
     <!-- Icone di Fontawesome -->
     <script src="https://kit.fontawesome.com/909bdca332.js" crossorigin="anonymous"></script>
     <!-- Chart JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>
     <!-- Script scritti da me -->
-    <script src="../src/graficoAzioni.js"></script>
-    <script src="../src/pagina_azioni.js"></script>
+    <script src="../src/pagina_esercizi.js"></script>
+
+
 </body>
 
 </html

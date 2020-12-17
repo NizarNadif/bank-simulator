@@ -46,6 +46,7 @@ button[type="button"] {
 }
 
 .card {
+	margin-bottom: 50px;
 	/* shadows */
 	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -53,8 +54,12 @@ button[type="button"] {
 		0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-@media only screen and (max-width: 1200px) {
-	.card {
-		margin-bottom: 50px;
-	}
+.col {
+	margin-bottom: 50px;
+}
+
+.fa-eye,
+.fa-eye-slash {
+	margin-top: 25px;
+	margin-left: 10px;
 }

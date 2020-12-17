@@ -36,7 +36,7 @@
                         <a href="azioni.html" class="nav-link">Azioni <i class="fas fa-chart-line"></i></a>
                         </li>
                         <li class="nav-item active">
-                            <a href="login.html" class="nav-link">Login <i class="fas fa-sign-in-alt"></i></a>
+                            <a href="login.html" class="nav-link">Logout <i class="fas fa-sign-in-alt"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -45,20 +45,37 @@
     </header>
 
     <div class="content">
-        <div id="login-form">
-            <form>
-                <p class="titolo">Accedi al tuo profilo</p>
-                <label for="user">Il tuo username o la tua e-mail</label>
-                <input class="form-control form-control-lg" type="text" id="user" name="user"
-                    placeholder="Username o e-mail" required>
-                <label for="pass">La tua password</label>
-                <div class="d-flex">
-                    <input class="form-control form-control-lg" type="password" id="pass" name="pass"
-                        placeholder="Password" required>
-                    <a id="occhio" onclick="visualizzaCodice()"><i class="far fa-eye"></i></a>
+        <div class="row">
+            <div class="col col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <h4 class="card-title">Titoli posseduti</h4>
+                        </center>
+                        <canvas id="grafico-titoli" width="1250"></canvas>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="accedi(this.form)">ACCEDI</button>
-            </form>
+            </div>
+            <div class="col col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <h4 class="card-title" id="nome_utente"></h4>
+                        </center>
+                        <div class="card-text" id="testo_utente"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <h4 class="card-title">Fondi acquistati</h4>
+                        </center>
+                        <canvas id="grafico-fondi" width="1250"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -105,7 +122,9 @@
     <!-- Chart JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>
     <!-- Script scritti da me -->
-    <script src="../src/pagina_login.js"></script>
+    <script src="../src/graficoTitoli.js"></script>
+    <script src="../src/graficoFondi.js"></script>
+    <script src="../src/datiUtente.js"></script>
 
 </body>
 

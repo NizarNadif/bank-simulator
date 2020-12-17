@@ -5,10 +5,6 @@ let giornate = azioni[0].cronologia.map((g) => g.data);
 createLineChart({ labels: giornate, datasets: [] });
 
 function getLineDataset(azione) {
-	/*let prezzi = azione.cronologia.map((giornata) => ({
-		x: giornata.data,
-		y: giornata.prezzo,
-	}));*/
 	let prezzi = azione.cronologia.map((giornata) => giornata.prezzo);
 
 	let colore =
